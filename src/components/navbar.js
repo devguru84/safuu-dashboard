@@ -7,7 +7,7 @@ import "./navbar.css";
 import img from "../assets/logo.png";
 import { IconContext } from "react-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "../redux/blockchain/blockchainActions";
+import { connect, startUp } from "../redux/blockchain/blockchainActions";
 // import Web3 from "web3";
 
 function Navbar() {
@@ -21,6 +21,7 @@ function Navbar() {
   const handleConnet = async (e) => {
     e.preventDefault();
     dispatch(connect());
+    dispatch(startUp());
   };
 
   useEffect(() => {
