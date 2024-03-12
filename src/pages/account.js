@@ -73,9 +73,11 @@ const Account = () => {
     setAPY(currentAPY);
     let perQuarter = (apy / 100.0 + 1) ** (1 / 96.0 / 364.0);
     let _roi1 = (perQuarter ** 96 - 1) * price;
+    let _roi1_Per = (perQuarter ** 96 - 1) * 100;
     let _roi5 = (perQuarter ** 480 - 1) * 100;
     let _roi5USD = (perQuarter ** 480 - 1) * price;
     setRoi1USD(_roi1.toFixed(2));
+    setDailyROI(_roi1_Per.toFixed(2));
     setRoi5(_roi5.toFixed(2));
     setRoi5USD(_roi5USD.toFixed(2));
   }, [blockchain]);
