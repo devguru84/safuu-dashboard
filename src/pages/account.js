@@ -81,10 +81,10 @@ const Account = () => {
         perQuarter
       ).toFixed(2)
     );
-    let _roi1 = (perQuarter ** 96 - 1) * price;
+    let _roi1 = (perQuarter ** 96 - 1) * blockchain.myBalance;
     let _roi1_Per = (perQuarter ** 96 - 1) * 100;
     let _roi5 = (perQuarter ** 480 - 1) * 100;
-    let _roi5USD = (perQuarter ** 480 - 1) * price;
+    let _roi5USD = (perQuarter ** 480 - 1) * blockchain.myBalance;
     setRoi1USD(_roi1.toFixed(2));
     setDailyROI(_roi1_Per.toFixed(2));
     setRoi5(_roi5.toFixed(2));
