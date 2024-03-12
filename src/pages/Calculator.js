@@ -40,7 +40,9 @@ const Calculator = () => {
       let num = (day - 1) * 96;
       let reward = amount * (perQuarter ** num - 1);
       setRewardEstimation(reward.toFixed(2));
-      let returnable = (reward + amount) * futurePrice - prevPrice * amount;
+      let returnable =
+        (Number(reward) + Number(amount)) * futurePrice - prevPrice * amount;
+      console.log("returnable", Number(reward) + Number(amount));
       setPotenReturn(returnable.toFixed(2));
     }
   }, [amount, apy, prevPrice, futurePrice, day]);

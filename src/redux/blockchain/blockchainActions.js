@@ -43,6 +43,9 @@ const updateAccountRequest = (payload) => {
 export const connect = () => {
   return async (dispatch) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    const signer = await provider.getSigner().getAddress();
+    console.log(signer);
     dispatch(connectRequest());
     const abiResponse = await fetch("/config/abi.json", {
       headers: {
@@ -85,7 +88,7 @@ export const connect = () => {
           console.log("account[0]", accounts[0]);
           dispatch(
             connectSuccess({
-              account: accounts[0],
+              account: signer,
               smartContract: myContract,
               connected: true,
               myBalance: myBalance.toString(),
