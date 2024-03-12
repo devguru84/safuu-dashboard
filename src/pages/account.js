@@ -27,7 +27,7 @@ const Account = () => {
   const [myBalance, setMyBalance] = useState(0);
   const [apy, setAPY] = useState(0);
   const [dailyROI, setDailyROI] = useState(0);
-  const [sec, setSec] = useState({ h: "00", m: "10", s: "00" });
+  const [sec, setSec] = useState({ h: "00", m: "00", s: "00" });
   const [price, setPrice] = useState(0);
   const [nextRewardSAFUU, setNextRewardSafuu] = useState(0);
   const [nextRewardUSD, setNextRewardUSD] = useState(0);
@@ -62,7 +62,7 @@ const Account = () => {
       (new Date(Date.now() + new Date().getTimezoneOffset() * 60000).getTime() /
         1000) |
       0;
-    secondes = (t - lauchtime) % 600;
+    secondes = 600 - ((t - lauchtime) % 600);
     setPrice(Number(blockchain.price).toFixed(2));
     if (blockchain.myBalance == 0) {
       setMyValue(
