@@ -72,6 +72,15 @@ const Account = () => {
     }
     setAPY(currentAPY);
     let perQuarter = (apy / 100.0 + 1) ** (1 / 96.0 / 364.0);
+    setNextRewardYield(perQuarter.toFixed(2));
+    setNextRewardSafuu((Number(blockchain.myBalance) * perQuarter).toFixed(2));
+    setNextRewardUSD(
+      (
+        Number(blockchain.price) *
+        Number(blockchain.myBalance) *
+        perQuarter
+      ).toFixed(2)
+    );
     let _roi1 = (perQuarter ** 96 - 1) * price;
     let _roi1_Per = (perQuarter ** 96 - 1) * 100;
     let _roi5 = (perQuarter ** 480 - 1) * 100;
@@ -126,7 +135,7 @@ const Account = () => {
         </div>
         <div className="block2_inner">
           <h4>ROI(5-Day Rate)</h4>
-          <h5>${roi5}</h5>
+          <h5>{roi5}%</h5>
         </div>
         <div className="block2_inner">
           <h4>ROI(5-Day Rate) USD</h4>
