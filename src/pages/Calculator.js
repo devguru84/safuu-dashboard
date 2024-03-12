@@ -5,7 +5,6 @@ import { startUp } from "../redux/blockchain/blockchainActions";
 
 const Calculator = () => {
   const currentAPY = 460367;
-  const currentperquarter = currentAPY / 96.0 / 365.0 / 100.0;
   let blockchain = useSelector((state) => state.blockchain);
   const dispatch = useDispatch();
   const [price, setPrice] = useState(0);
@@ -25,6 +24,12 @@ const Calculator = () => {
   useEffect(() => {
     let price = blockchain.price;
     setPrice(Number(price).toFixed(2));
+    setBalance(blockchain.myBalance);
+    setPrevPrice(Number(price).toFixed(2));
+    setAmount(blockchain.myBalance);
+    setFuturePrice(Number(price).toFixed(2));
+    setAPY(Number(blockchain.apy).toFixed(2));
+    setAPY(currentAPY);
   }, [blockchain]);
 
   useEffect(() => {

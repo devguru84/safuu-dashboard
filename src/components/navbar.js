@@ -6,15 +6,15 @@ import { SidebarData } from "./SidebarData";
 import "./navbar.css";
 import img from "../assets/logo.png";
 import { IconContext } from "react-icons";
-import { ethers } from "ethers";
 import { useDispatch, useSelector } from "react-redux";
-import { connect, startUp } from "../redux/blockchain/blockchainActions";
-import { fetchData } from "../redux/data/dataActions";
+import { connect } from "../redux/blockchain/blockchainActions";
 // import Web3 from "web3";
 
 function Navbar() {
   const dispatch = useDispatch();
   const [sidebar, setSidebar] = useState(false);
+  const blockchain = useSelector((state) => state.blockchain);
+  const [address, setAddress] = useState("Connect Wallet");
 
   const showSidebar = async () => setSidebar(!sidebar);
 
@@ -24,8 +24,18 @@ function Navbar() {
   };
 
   useEffect(() => {
+    let account = blockchain.account;
+    console.log("account = , connected", account, blockchain.connected);
+    let connected = blockchain.connected;
+    let address =
+      connected && account
+        ? account.slice(2, 6) + "..." + account.slice(38, 42)
+        : "Connect Wallet";
+    if (connected) {
+      setAddress(address);
+    }
     // dispatch(startUp());
-  }, []);
+  }, [blockchain]);
 
   return (
     <>
@@ -36,7 +46,7 @@ function Navbar() {
           </Link>
           <div className="nav_switch">
             <span id="safuu_btn">SAFUU</span>
-            <span onClick={handleConnet}>Connect Wallet</span>
+            <span onClick={handleConnet}>{address}</span>
           </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>

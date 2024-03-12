@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CSS/dashboard.css";
 import { useDispatch, useSelector } from "react-redux";
-import { connect, startUp } from "../redux/blockchain/blockchainActions";
+import { startUp } from "../redux/blockchain/blockchainActions";
 
 export const Dashboard = () => {
   const secondsToTime = (secs) => {
@@ -32,7 +32,6 @@ export const Dashboard = () => {
   const dispatch = useDispatch();
   var timer = 0;
   var secondes = 10 * 60;
-  var lauchtime = 0;
   const [sec, setSec] = useState({ h: "00", m: "10", s: "00" });
 
   const countDown = () => {

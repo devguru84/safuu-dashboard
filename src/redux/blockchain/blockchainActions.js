@@ -71,7 +71,7 @@ export const connect = () => {
         const networkId = await ethereum.request({
           method: "net_version",
         });
-        if (networkId == CONFIG.NETWORK.ID) {
+        if (networkId === CONFIG.NETWORK.ID) {
           // const SmartContractObj = new Web3EthContract(
           //   abi,
           //   CONFIG.CONTRACT_ADDRESS
@@ -81,10 +81,13 @@ export const connect = () => {
             abi,
             provider
           );
+          const myBalance = await myContract.balanceOf(accounts[0]);
           dispatch(
             connectSuccess({
               account: accounts[0],
               smartContract: myContract,
+              connected: true,
+              myBalance: myBalance.toString(),
               // web3: web3,
             })
           );
