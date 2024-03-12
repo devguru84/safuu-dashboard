@@ -42,6 +42,7 @@ const Account = () => {
     if (secondes > 0) secondes--;
     else secondes = 10 * 60;
     setSec(secondsToTime(secondes));
+    console.log("sed", secondsToTime(secondes));
   };
   useEffect(() => {
     dispatch(startUp());
@@ -71,8 +72,9 @@ const Account = () => {
       setMyBalance(Number(blockchain.myBalance).toFixed(2));
     }
     setAPY(currentAPY);
-    let perQuarter = (apy / 100.0 + 1) ** (1 / 96.0 / 364.0);
-    setNextRewardYield(perQuarter.toFixed(2));
+    let perQuarter = (apy / 100.0 + 1) ** (1 / 144.0 / 364.0);
+    console.log("per", perQuarter)
+    setNextRewardYield(((perQuarter - 1) * 100).toFixed(3));
     setNextRewardSafuu((Number(blockchain.myBalance) * perQuarter).toFixed(2));
     setNextRewardUSD(
       (
@@ -81,10 +83,10 @@ const Account = () => {
         perQuarter
       ).toFixed(2)
     );
-    let _roi1 = (perQuarter ** 96 - 1) * blockchain.myBalance;
-    let _roi1_Per = (perQuarter ** 96 - 1) * 100;
-    let _roi5 = (perQuarter ** 480 - 1) * 100;
-    let _roi5USD = (perQuarter ** 480 - 1) * blockchain.myBalance;
+    let _roi1 = (perQuarter ** 144 - 1) * blockchain.myBalance;
+    let _roi1_Per = (perQuarter ** 144 - 1) * 100;
+    let _roi5 = (perQuarter ** 720 - 1) * 100;
+    let _roi5USD = (perQuarter ** 720 - 1) * blockchain.myBalance;
     setRoi1USD(_roi1.toFixed(2));
     setDailyROI(_roi1_Per.toFixed(2));
     setRoi5(_roi5.toFixed(2));
