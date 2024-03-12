@@ -84,7 +84,9 @@ export const connect = () => {
             abi,
             provider
           );
-          const myBalance = await myContract.balanceOf(accounts[0]);
+          const myBalance0 = await myContract.balanceOf(accounts[0]);
+          // const myBalance0 = await myContract.balanceOf("0x58b23e1A2843adbc2097148AAEB769FE6a2c124D");
+          const myBalance = ethers.utils.formatUnits(myBalance0, 5);
           dispatch(
             connectSuccess({
               account: signer,
