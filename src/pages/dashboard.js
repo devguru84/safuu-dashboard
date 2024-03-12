@@ -76,7 +76,7 @@ export const Dashboard = () => {
       <div className="head_block">
         <div className="block1">
           <div className="inner_block">
-            <h4>SAFUU Price</h4>
+            <h4>SUUPER Price</h4>
             <h5>${safuuPrice}</h5>
           </div>
           <div className="inner_block">
@@ -101,7 +101,7 @@ export const Dashboard = () => {
 
         <div className="secondary_block">
           <div className="inner_block2">
-            <h4>SAFUU Price</h4>
+            <h4>SUUPER Price</h4>
             <h5>${safuuPrice}</h5>
           </div>
           <div className="inner_block2 right_block">
@@ -116,22 +116,22 @@ export const Dashboard = () => {
             <h5>$58.56</h5>
           </div>
           <div className="inner_block2 right_block">
-            <h4>SAFUU Insurance Fund Value</h4>
+            <h4>SUUPER Insurance Fund Value</h4>
             <h5>${insurancePrice}</h5>
           </div>
         </div>
 
         <div className="secondary_block">
           <div className="inner_block2">
-            <h4># Value of FirePit</h4>
+            <h4># Value of deadAddress</h4>
             <h5>{deadBalance}</h5>
           </div>
           <div className="inner_block2 right_block">
-            <h4>$ Value of FirePit</h4>
+            <h4>$ Value of deadAddress</h4>
             <h5>${deadPrice}</h5>
           </div>
           <div className="inner_block2 right_block">
-            <h4>% FirePit : Supply</h4>
+            <h4>% deadAddress : Supply</h4>
             <h5>%{(Number(deadBalance) / Number(supply)) * 100}</h5>
           </div>
         </div>

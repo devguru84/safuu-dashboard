@@ -25,13 +25,13 @@ export const SidebarData = [
   },
   {
     title: "Swap",
-    path: "https://app.bogged.finance/bsc/swap?tokenIn=BNB&tokenOut=0xE5bA47fD94CB645ba4119222e34fB33F59C7CD90",
+    path: "#",
     icon: <AiIcons.AiOutlineThunderbolt />,
     cName: "nav-text",
   },
   {
     title: "Docs",
-    path: "https://safuuprotocol.gitbook.io/safuuprotocol/",
+    path: "https://suuper-protocol.gitbook.io/suuperprotocol/",
     icon: <HiIcons.HiOutlineDocumentText />,
     cName: "nav-text",
   },

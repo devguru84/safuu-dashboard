@@ -22,7 +22,7 @@ h4 h5 {
 
 .block1 {
   border: 1px solid white;
-  background-color: #09160c;
+  background-color: #005d86;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@ h4 h5 {
   flex: 1 25%;
   font-weight: 400;
   border: 1px solid white;
-  background-color: #09160c;
+  background-color: #005d86;
   border-radius: 10px;
 }
 

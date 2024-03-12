@@ -26,7 +26,7 @@
   flex: 1 25%;
   font-weight: 400;
   border: 1px solid white;
-  background-color: #09160c;
+  background-color: #005d86;
   border-radius: 10px;
 }
 
@@ -37,7 +37,7 @@
   margin: 0.2em 1em;
 }
 .block_inner h3 {
-    color: #61CE70;
+    color: #f3de00;
   font-size: 2em;
   margin: 0.2em 1em;
 }
@@ -55,7 +55,7 @@
 .block2 {
     margin-top: 1em;
   border: 1px solid white;
-  background-color: #09160c;
+  background-color: #005d86;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
