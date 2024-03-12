@@ -32,7 +32,7 @@ export const Dashboard = () => {
   const dispatch = useDispatch();
   var timer = 0;
   var secondes = 10 * 60;
-  const [sec, setSec] = useState({ h: "00", m: "10", s: "00" });
+  const [sec, setSec] = useState({ h: "00", m: "00", s: "00" });
 
   const countDown = () => {
     if (secondes > 0) secondes--;
@@ -61,7 +61,7 @@ export const Dashboard = () => {
       (new Date(Date.now() + new Date().getTimezoneOffset() * 60000).getTime() /
         1000) |
       0;
-    secondes = (t - lauchtime) % 600;
+    secondes = 600 - ((t - lauchtime) % 600);
     console.log("seconds", secondes);
     setSafuuPrice(price.toFixed(2));
     setSupply((Number(totalSupply) / 100000).toFixed(2));
