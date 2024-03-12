@@ -32,7 +32,6 @@ const Calculator = () => {
       setInitInvest(Number(amount * prevPrice).toFixed(2));
     if (amount !== "" && apy !== "" && prevPrice !== "" && futurePrice !== "") {
       let perQuarter = (apy / 100.0 + 1) ** (1 / 96.0 / 364.0);
-      console.log("paer", perQuarter);
       let num = (day - 1) * 96;
       let reward = amount * (perQuarter ** num - 1);
       setRewardEstimation(reward.toFixed(2));

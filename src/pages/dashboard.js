@@ -31,16 +31,22 @@ export const Dashboard = () => {
   const [deadPrice, setDeadPrice] = useState(0);
   const dispatch = useDispatch();
   var timer = 0;
-  var secondes = 15 * 60;
-  const [sec, setSec] = useState({ h: "00", m: "15", s: "00" });
+  var secondes = 10 * 60;
+  var lauchtime = 0;
+  const [sec, setSec] = useState({ h: "00", m: "10", s: "00" });
 
   const countDown = () => {
     if (secondes > 0) secondes--;
-    else secondes = 15 * 60;
+    else secondes = 10 * 60;
     setSec(secondsToTime(secondes));
   };
 
   useEffect(() => {
+    const t =
+      (new Date(Date.now() + new Date().getTimezoneOffset() * 60000).getTime() /
+        1000) |
+      0;
+    console.log("t", t);
     if (timer > 0) clearInterval(timer);
     timer = setInterval(countDown, 1000);
     dispatch(startUp());
@@ -51,7 +57,13 @@ export const Dashboard = () => {
     let treasuryBalance = blockchain.treasuryBalance;
     let insuranceBalance = blockchain.insuranceBalance;
     let deadBalance = blockchain.deadBalance;
-    console.log(price);
+    let lauchtime = blockchain.launchTime;
+    const t =
+      (new Date(Date.now() + new Date().getTimezoneOffset() * 60000).getTime() /
+        1000) |
+      0;
+    secondes = (t - lauchtime) % 600;
+    console.log("seconds", secondes);
     setSafuuPrice(price.toFixed(2));
     setSupply((Number(totalSupply) / 100000).toFixed(2));
     setMarketCap(Number((totalSupply / 100000) * price).toFixed(2));

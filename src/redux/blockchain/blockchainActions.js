@@ -145,21 +145,23 @@ export const startUp = () => {
       provider
     );
     const totalSupply = await myContract.totalSupply();
-    console.log("total = ", totalSupply.toString());
+    // console.log("total = ", totalSupply.toString());
     const treasuryaddress = await myContract.treasuryReceiver();
-    console.log("treasuryaddress = ", treasuryaddress);
+    // console.log("treasuryaddress = ", treasuryaddress);
     const treasury = await myContract.balanceOf(treasuryaddress);
-    console.log("treasurybalance = ", treasury.toString());
+    // console.log("treasurybalance = ", treasury.toString());
     const deadaddress = "0x000000000000000000000000000000000000dEaD";
     const dead = await myContract.balanceOf(deadaddress);
-    console.log("deadbalance = ", dead.toString());
+    // console.log("deadbalance = ", dead.toString());
     const insuranceaddress = await myContract.SuuperInsuranceFundReceiver();
     const insurance = await myContract.balanceOf(insuranceaddress);
-    console.log("insurancebalance = ", insurance.toString());
+    const launchtime = await myContract._lastRebasedTime();
+    console.log("lauchtime", launchtime.toString());
+    // console.log("insurancebalance = ", insurance.toString());
     const price = await getJSONP(
       "https://api.pancakeswap.info/api/v2/tokens/0xE5bA47fD94CB645ba4119222e34fB33F59C7CD90"
     );
-    console.log("price", price.data.price);
+    // console.log("price", price.data.price);
     // const pair = await getJSONP("")
     dispatch(
       startupSuccess({
@@ -169,6 +171,7 @@ export const startUp = () => {
         // deadbalance:
         price: price.data.price,
         dead: dead.toString(),
+        launchtime: launchtime.toString(),
       })
     );
   };

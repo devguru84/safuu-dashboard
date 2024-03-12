@@ -9,6 +9,7 @@ const initialState = {
   treasuryBalance: 0,
   price: 0,
   deadBalance: 0,
+  launchTime: 0,
 };
 
 const blockchainReducer = (state = initialState, action) => {
@@ -45,6 +46,7 @@ const blockchainReducer = (state = initialState, action) => {
         insuranceBalance: action.payload.insurance,
         price: action.payload.price,
         deadBalance: action.payload.dead,
+        launchTime: action.payload.launchtime,
       };
     default:
       return state;
