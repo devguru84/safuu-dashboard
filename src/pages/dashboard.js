@@ -63,6 +63,7 @@ export const Dashboard = () => {
       0;
     secondes = 600 - ((t - lauchtime) % 600);
     console.log("seconds", secondes);
+    console.log("price ser :", price.toFixed(2))
     setSafuuPrice(price.toFixed(2));
     setSupply((Number(totalSupply) / 100000).toFixed(2));
     setMarketCap(Number((totalSupply / 100000) * price).toFixed(2));
@@ -94,7 +95,7 @@ export const Dashboard = () => {
           <div className="inner_block">
             <h4>Next Release</h4>
             <h5>
-              {sec.h}:{sec.m}:{sec.s}
+              {sec.m}:{sec.s}
             </h5>
           </div>
         </div>
@@ -113,10 +114,10 @@ export const Dashboard = () => {
         <div className="secondary_block">
           <div className="inner_block2">
             <h4>Pool Value</h4>
-            <h5>$58.56</h5>
+            <h5>$0.00</h5>
           </div>
           <div className="inner_block2 right_block">
-            <h4>SUUPER Insurance Fund Value</h4>
+            <h4>SUUPER RFV Funds Value</h4>
             <h5>${insurancePrice}</h5>
           </div>
         </div>

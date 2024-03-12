@@ -45,6 +45,7 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+        <img  className="logo_img_sm" src={img} alt="" />
           <div className="nav_switch">
             <span onClick={handleConnet}>{address}</span>
           </div>

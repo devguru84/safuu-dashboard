@@ -30,6 +30,12 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+    title: "Treasury",
+    path: "/treasury",
+    icon: <AiIcons.AiOutlineContainer />,
+    cName: "nav-text",
+  },
+  {
     title: "Docs",
     path: "https://suuper-protocol.gitbook.io/suuperprotocol/",
     icon: <HiIcons.HiOutlineDocumentText />,

@@ -130,7 +130,7 @@ export const startUp = () => {
   };
   return async (dispatch) => {
     const provider = new ethers.providers.JsonRpcProvider(
-      "https://data-seed-prebsc-1-s1.binance.org:8545"
+      " https://bsc-dataseed1.binance.org/"
     );
     const abiResponse = await fetch("/config/abi.json", {
       headers: {
@@ -166,7 +166,7 @@ export const startUp = () => {
     console.log("lauchtime", launchtime.toString());
     // console.log("insurancebalance = ", insurance.toString());
     const price = await getJSONP(
-      "https://api.pancakeswap.info/api/v2/tokens/0xE5bA47fD94CB645ba4119222e34fB33F59C7CD90"
+      "https://api.pancakeswap.info/api/v2/tokens/0xB00B5A85181305c6f5E072e56C2Bf8240e0747BD"
     );
     // console.log("price", price.data.price);
     // const pair = await getJSONP("")

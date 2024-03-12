@@ -48,7 +48,7 @@
 }
 
 .nav-menu.active {
-  color: #f3de00;
+  color: #fcb900;
   left: 0;
   transition: 350ms;
 }
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  padding: 8px 20px 8px 0px;
   list-style: none;
   height: 60px;
 }
@@ -76,7 +76,7 @@
 }
 
 .nav-text :hover {
-  color: #f3de00;
+  color: #fcb900;
 }
 
 .nav-menu-items {
@@ -99,8 +99,8 @@ span {
 .logo_img{
   display: flex;
   justify-content: center;
-  margin-bottom: 1.2em;
-  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-top: -1em;
   
 }
 
@@ -110,6 +110,11 @@ span {
   height: 100px;
   width: 100px;
   border-radius: 8px;
+}
+
+.logo_img_sm{
+  width: 50px;
+  padding-left: 25px;
 }
 
 @media (min-width: 315px) and (max-width: 424px){
