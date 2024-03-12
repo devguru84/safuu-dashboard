@@ -75,18 +75,18 @@ const Account = () => {
     let perQuarter = (apy / 100.0 + 1) ** (1 / 144.0 / 364.0);
     console.log("per", perQuarter)
     setNextRewardYield(((perQuarter - 1) * 100).toFixed(3));
-    setNextRewardSafuu((Number(blockchain.myBalance) * perQuarter).toFixed(2));
+    setNextRewardSafuu((Number(blockchain.myBalance) * (perQuarter - 1)).toFixed(3));
     setNextRewardUSD(
       (
         Number(blockchain.price) *
         Number(blockchain.myBalance) *
-        perQuarter
-      ).toFixed(2)
+        (perQuarter - 1)
+      ).toFixed(3)
     );
-    let _roi1 = (perQuarter ** 144 - 1) * blockchain.myBalance;
+    let _roi1 = (perQuarter ** 144 - 1) * blockchain.myBalance * blockchain.price;
     let _roi1_Per = (perQuarter ** 144 - 1) * 100;
     let _roi5 = (perQuarter ** 720 - 1) * 100;
-    let _roi5USD = (perQuarter ** 720 - 1) * blockchain.myBalance;
+    let _roi5USD = (perQuarter ** 720 - 1) * blockchain.myBalance * blockchain.price;
     setRoi1USD(_roi1.toFixed(2));
     setDailyROI(_roi1_Per.toFixed(2));
     setRoi5(_roi5.toFixed(2));
