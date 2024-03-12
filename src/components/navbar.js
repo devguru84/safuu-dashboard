@@ -32,7 +32,7 @@ function Navbar() {
       connected && account
         ? account.slice(2, 6) + "..." + account.slice(38, 42)
         : "Connect Wallet";
-    if (connected) {
+    if (blockchain.connected) {
       setAddress(address);
     }
     // dispatch(startUp());
