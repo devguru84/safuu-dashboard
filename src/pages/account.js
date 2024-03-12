@@ -64,7 +64,7 @@ const Account = () => {
       0;
     secondes = 600 - ((t - lauchtime) % 600);
     setPrice(Number(blockchain.price).toFixed(2));
-    if (blockchain.myBalance == 0) {
+    if (blockchain.myBalance !== 0) {
       setMyValue(
         (Number(blockchain.price) * Number(blockchain.myBalance)).toFixed(2)
       );

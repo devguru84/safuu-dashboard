@@ -85,7 +85,6 @@ export const connect = () => {
             provider
           );
           const myBalance = await myContract.balanceOf(accounts[0]);
-          console.log("account[0]", accounts[0]);
           dispatch(
             connectSuccess({
               account: signer,
