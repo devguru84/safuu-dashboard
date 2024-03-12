@@ -12,8 +12,6 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-
-
 }
 
 .top_section .toggle{
@@ -22,7 +20,6 @@
     font-size: 1.5em;
     position: absolute;
     right: 0;
-    
 }
 
 
@@ -41,5 +38,6 @@
   height: 100%;
   width: 100%;
   border-radius: 8px;
+  
 }
 

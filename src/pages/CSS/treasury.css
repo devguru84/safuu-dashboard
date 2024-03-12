@@ -1,0 +1,20 @@
+.fullpage {
+  color: #fcb900;
+}
+.fullpage img {
+  width: 100%;
+  max-width: 500px;
+}
+.fullpage h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}

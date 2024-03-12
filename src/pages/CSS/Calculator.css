@@ -18,12 +18,12 @@
 
 .calc_head h4 {
   font-size: 1.1em;
-  color: rgb(190, 190, 190);
+  color: #fff;
   margin: 0.2em 1em;
 }
 
 .calc_head h5 {
-  color: rgb(190, 190, 190);
+  color: #fff;
   font-size: 1em;
   margin: 0.2em 1em;
 }
@@ -45,14 +45,14 @@
   flex-direction: column;
   flex: 1 25%;
   font-weight: 400;
-  border: 1px solid white;
-  background-color: #09160c;
+  border: 3px solid #fcb900;
+  background-color: #fff;
   border-radius: 10px;
 }
 
 .calc_inner1 h4 {
   font-size: 1em;
-  color: rgb(190, 190, 190);
+  color: #6c6c6c;
   margin: 0.2em 1em;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .calc_inner1 h5 {
-  color: rgb(190, 190, 190);
+  color: #323c43;
   font-size: 1.3em;
   margin: 0.2em 1em;
 }
@@ -169,7 +169,7 @@
 
   .calc_inner1 h4 {
     font-size: 1em;
-    color: rgb(190, 190, 190);
+    color: #6c6c6c;
     margin: 0.2em 1em;
   }
 
@@ -178,7 +178,7 @@
   }
 
   .calc_inner1 h5 {
-    color: rgb(190, 190, 190);
+    color: #6c6c6c;
     font-size: 1.3em;
     margin: 0.2em 1em;
   }

@@ -96,7 +96,7 @@ const Account = () => {
         <div className="block_inner">
           <h4>Your Balance</h4>
           <h3>${myValue}</h3>
-          <h5>{myBalance}SAFUU</h5>
+          <h5>{myBalance}SUUPER</h5>
         </div>
         <div className="block_inner right_block">
           <h4>APY</h4>
@@ -106,7 +106,7 @@ const Account = () => {
         <div className="block_inner right_block">
           <h4>Next rebase:</h4>
           <h3>
-            {sec.h}:{sec.m}:{sec.s}
+            {sec.m}:{sec.s}
           </h3>
           <h5>You will earn money soon</h5>
         </div>
@@ -114,12 +114,12 @@ const Account = () => {
 
       <div className="block2">
         <div className="block2_inner">
-          <h4>Current SAFUU Price</h4>
+          <h4>Current SUUPER Price</h4>
           <h5>${price}</h5>
         </div>
         <div className="block2_inner">
           <h4>Next Reward Amount</h4>
-          <h5>{nextRewardSAFUU}SAFUU</h5>
+          <h5>{nextRewardSAFUU}SUUPER</h5>
         </div>
         <div className="block2_inner">
           <h4>Next Reward Amount USD</h4>

@@ -55,7 +55,7 @@ const Calculator = () => {
 
       <div className="calc_block">
         <div className="calc_inner1">
-          <h4>SAFUU Price</h4>
+          <h4>SUUPER Price</h4>
           <h5>${price}</h5>
         </div>
         <div className="calc_inner1 right_block">
@@ -63,14 +63,14 @@ const Calculator = () => {
           <h5>{currentAPY}%</h5>
         </div>
         <div className="calc_inner1 right_block">
-          <h4>Your SAFUU Balance</h4>
+          <h4>Your SUUPER Balance</h4>
           <h5>{balance}</h5>
         </div>
       </div>
 
       <div className="calc_input">
         <div className="div_input">
-          <h5>SAFUU Amount</h5>
+          <h5>SUUPER Amount</h5>
           <div className="input">
             <input
               style={{ color: "#ffffff", fontSize: "1em" }}
@@ -99,7 +99,7 @@ const Calculator = () => {
 
       <div className="calc_input">
         <div className="div_input">
-          <h5>SAFUU price at purchase($)</h5>
+          <h5>SUUPER price at purchase($)</h5>
           <div className="input">
             <input
               style={{ color: "#ffffff", fontSize: "1em" }}
@@ -111,7 +111,7 @@ const Calculator = () => {
           </div>
         </div>
         <div className="div_input right_block">
-          <h5>Future SAFUU market price ($)</h5>
+          <h5>Future SUUPER market price ($)</h5>
           <div className="input">
             <input
               style={{ color: "#ffffff", fontSize: "1em" }}
@@ -143,7 +143,7 @@ const Calculator = () => {
           <h5>${initInvest}</h5>
         </div>
         <div className="foot_inner">
-          <h4>SAFUU rewards estimation</h4>
+          <h4>SUUPER rewards estimation</h4>
           <h5>{rewardEstimation}</h5>
         </div>
         <div className="foot_inner">
