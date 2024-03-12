@@ -165,9 +165,15 @@ export const startUp = () => {
     // console.log("treasuryaddress = ", treasuryaddress);
     const treasury = await myContract.balanceOf(treasuryaddress);
     // console.log("treasurybalance = ", treasury.toString());
+
+    const poolAddress = await myContract.pairAddress();
+    const pool = await myContract.balanceOf(poolAddress);
+
     const deadaddress = "0x000000000000000000000000000000000000dEaD";
     const dead = await myContract.balanceOf(deadaddress);
     // console.log("deadbalance = ", dead.toString());
+
+
     const insuranceaddress = await myContract.SuuperInsuranceFundReceiver();
     const insurance = await myContract.balanceOf(insuranceaddress);
     const launchtime = await myContract._lastRebasedTime();
@@ -199,6 +205,7 @@ export const startUp = () => {
         price: price,
         dead: dead.toString(),
         launchtime: launchtime.toString(),
+        pool: pool
       })
     );
   };

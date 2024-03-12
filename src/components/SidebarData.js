@@ -25,7 +25,7 @@ export const SidebarData = [
   },
   {
     title: "Swap",
-    path: "#",
+    path: "https://pancakeswap.finance/swap?outputCurrency=0xb00b5a85181305c6f5e072e56c2bf8240e0747bd",
     icon: <AiIcons.AiOutlineThunderbolt />,
     cName: "nav-text",
   },
