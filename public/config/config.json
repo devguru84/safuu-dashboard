@@ -1,10 +1,11 @@
 {
-  "CONTRACT_ADDRESS": "0x1466a3440FE5599f6eF97D54F198Aa2b1F71883a",
-  "SCAN_LINK": "https://testnet.bscscan.com/address/0x1466a3440FE5599f6eF97D54F198Aa2b1F71883a#code",
+  "CONTRACT_ADDRESS": "0xb00b5a85181305c6f5e072e56c2bf8240e0747bd",
+  "CONTRACT_ADDRESS_PAIR": "0x96ee62275bff8a0db1093d0cd75da0b23eb11ded",
+  "SCAN_LINK": "https://www.bscscan.com/address/0xb00b5a85181305c6f5e072e56c2bf8240e0747bd",
   "NETWORK": {
     "NAME": "Binance Smart Chain Testnet",
     "SYMBOL": "tBNB",
-    "ID": 97
+    "ID": 56
   },
   "NFT_NAME": "Nerdy Coder Clones",
   "SYMBOL": "NCC",

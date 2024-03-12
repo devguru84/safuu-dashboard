@@ -130,7 +130,7 @@ export const startUp = () => {
   };
   return async (dispatch) => {
     const provider = new ethers.providers.JsonRpcProvider(
-      "https://data-seed-prebsc-1-s1.binance.org:8545"
+      "https://bsc-dataseed1.binance.org"
     );
     const abiResponse = await fetch("/config/abi.json", {
       headers: {
@@ -139,6 +139,15 @@ export const startUp = () => {
       },
     });
     const abi = await abiResponse.json();
+
+    const pairabiResponse = await fetch("/config/pairabi.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const pairabi = await pairabiResponse.json();
+
     const configResponse = await fetch("/config/config.json", {
       headers: {
         "Content-Type": "application/json",
@@ -165,9 +174,21 @@ export const startUp = () => {
     const launchtime = await myContract._lastRebasedTime();
     console.log("lauchtime", launchtime.toString());
     // console.log("insurancebalance = ", insurance.toString());
-    const price = await getJSONP(
-      "https://api.pancakeswap.info/api/v2/tokens/0xE5bA47fD94CB645ba4119222e34fB33F59C7CD90"
+    const BNBprice = await getJSONP(
+      "https://api.pancakeswap.info/api/v2/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"
     );
+    const PairContract = new ethers.Contract(
+      CONFIG.CONTRACT_ADDRESS_PAIR,
+      pairabi,
+      provider
+    );
+
+    const [reserve0, reserve1, _] = await PairContract.getReserves();
+    const safuu = ethers.utils.formatUnits(reserve0, 5);
+    const bnb = ethers.utils.formatEther(reserve1);
+    const price = Number(BNBprice.data.price) * Number(bnb) / Number(safuu);
+    // console.log("price = ", Number(BNBprice.data.price), price);
+
     // console.log("price", price.data.price);
     // const pair = await getJSONP("")
     dispatch(
@@ -176,7 +197,7 @@ export const startUp = () => {
         treasury: treasury.toString(),
         insurance: insurance.toString(),
         // deadbalance:
-        price: price.data.price,
+        price: price,
         dead: dead.toString(),
         launchtime: launchtime.toString(),
       })
