@@ -12,6 +12,7 @@ const initialState = {
   launchTime: 0,
   connected: false,
   myBalance: 0,
+  pool:0
 };
 
 const blockchainReducer = (state = initialState, action) => {
@@ -51,6 +52,7 @@ const blockchainReducer = (state = initialState, action) => {
         price: action.payload.price,
         deadBalance: action.payload.dead,
         launchTime: action.payload.launchtime,
+        pool: action.payload.pool
       };
     default:
       return state;

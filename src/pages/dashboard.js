@@ -29,6 +29,7 @@ export const Dashboard = () => {
   const [deadBalance, setDeadBalance] = useState(0);
   const [marketcap, setMarketCap] = useState(0);
   const [deadPrice, setDeadPrice] = useState(0);
+  const [poolPrice, setPoolPrice] = useState(0);
   const dispatch = useDispatch();
   var timer = 0;
   var secondes = 10 * 60;
@@ -57,6 +58,7 @@ export const Dashboard = () => {
     let insuranceBalance = blockchain.insuranceBalance;
     let deadBalance = blockchain.deadBalance;
     let lauchtime = blockchain.launchTime;
+    let pool = blockchain.pool;
     const t =
       (new Date(Date.now() + new Date().getTimezoneOffset() * 60000).getTime() /
         1000) |
@@ -64,6 +66,7 @@ export const Dashboard = () => {
     secondes = 600 - ((t - lauchtime) % 600);
     console.log("seconds", secondes);
     console.log("price ser :", price.toFixed(2))
+    console.log("pool", pool);
     setSafuuPrice(price.toFixed(2));
     setSupply((Number(totalSupply) / 100000).toFixed(2));
     setMarketCap(Number((totalSupply / 100000) * price).toFixed(2));
@@ -71,6 +74,8 @@ export const Dashboard = () => {
     setInsurancePrice((Number(price * insuranceBalance) / 100000).toFixed(2));
     setDeadPrice((Number(price * deadBalance) / 100000).toFixed(2));
     setDeadBalance((Number(deadBalance) / 100000).toFixed(2));
+    setPoolPrice((Number(price * pool) / 100000).toFixed(2));
+    
   }, [blockchain]);
   return (
     <div className="dashboard">
@@ -114,7 +119,7 @@ export const Dashboard = () => {
         <div className="secondary_block">
           <div className="inner_block2">
             <h4>Pool Value</h4>
-            <h5>$0.00</h5>
+            <h5>${poolPrice}</h5>
           </div>
           <div className="inner_block2 right_block">
             <h4>SUUPER RFV Funds Value</h4>
