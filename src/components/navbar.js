@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -6,11 +6,26 @@ import { SidebarData } from "./SidebarData";
 import "./navbar.css";
 import img from "../assets/logo.png";
 import { IconContext } from "react-icons";
+import { ethers } from "ethers";
+import { useDispatch, useSelector } from "react-redux";
+import { connect, startUp } from "../redux/blockchain/blockchainActions";
+import { fetchData } from "../redux/data/dataActions";
+// import Web3 from "web3";
 
 function Navbar() {
+  const dispatch = useDispatch();
   const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = async () => setSidebar(!sidebar);
+
+  const handleConnet = async (e) => {
+    e.preventDefault();
+    dispatch(connect());
+  };
+
+  useEffect(() => {
+    // dispatch(startUp());
+  }, []);
 
   return (
     <>
@@ -21,7 +36,7 @@ function Navbar() {
           </Link>
           <div className="nav_switch">
             <span id="safuu_btn">SAFUU</span>
-            <span>Connect Wallet</span>
+            <span onClick={handleConnet}>Connect Wallet</span>
           </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -35,14 +50,10 @@ function Navbar() {
               <img src={img} alt="" />
             </div>
             {SidebarData.map((item, index) => {
-              if(item.title === 'Swap'|| item.title === "Docs"){
+              if (item.title === "Swap" || item.title === "Docs") {
                 return (
                   <li key={index} className={item.cName}>
-                    <a
-                      href={item.path}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={item.path} target="_blank" rel="noreferrer">
                       {item.icon}
                       <span>{item.title}</span>
                     </a>

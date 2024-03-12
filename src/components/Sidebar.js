@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import './CSS/Sidebar.css';
-import logo from '../assets/logo.png';
-
+import React, { useEffect, useState } from "react";
+import "./CSS/Sidebar.css";
+import logo from "../assets/logo.png";
 
 const Sidebar = (props) => {
   const [inactive, setInactive] = useState(false);
@@ -21,7 +20,6 @@ const Sidebar = (props) => {
     });
   };
 
-
   useEffect(() => {
     let menuItems = document.querySelectorAll(".menu-item");
     menuItems.forEach((el) => {
@@ -38,13 +36,11 @@ const Sidebar = (props) => {
     });
   }, []);
 
-
   return (
     <div className="sidebar">
       <div className="top_section">
-        
         <div className="toggle">
-          <i class="bi bi-list"></i>
+          <i className="bi bi-list"></i>
         </div>
       </div>
       <div className="logo_section">
@@ -54,6 +50,6 @@ const Sidebar = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;
