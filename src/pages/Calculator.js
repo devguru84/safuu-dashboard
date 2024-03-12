@@ -42,7 +42,6 @@ const Calculator = () => {
       setRewardEstimation(reward.toFixed(2));
       let returnable =
         (Number(reward) + Number(amount)) * futurePrice - prevPrice * amount;
-      console.log("returnable", Number(reward) + Number(amount));
       setPotenReturn(returnable.toFixed(2));
     }
   }, [amount, apy, prevPrice, futurePrice, day]);
